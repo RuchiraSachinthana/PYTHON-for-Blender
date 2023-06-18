@@ -10,3 +10,11 @@ so = bpy.context.active_object
 
 #Rotate Object 
 so.rotation_euler[0] +=  radians(45)
+
+#Create Modifier
+mod_subsurf = so.modifiers.new('My Modifier', 'SUBSURF')
+
+#Change modifier value
+mod_subsurf.levels = 3
+
+bpy.ops.object.shade_smooth()
